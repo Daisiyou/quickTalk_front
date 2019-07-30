@@ -1,3 +1,7 @@
+
+<router-link to="/">Home</router-link>
+<a href="/"> Home</a>
+区别，router-link不对刷新界面， <a>会刷新界面
 # vue-travel-app
 
 ## Project setup
