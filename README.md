@@ -21,6 +21,30 @@ deunpm --- http://registry.enpmjs.org/
 
 ```
 
+###component props
+
+```
+example:
+
+props: {
+    title:{
+      type:String,
+      required:true,
+      default:"this is title",
+    }
+}
+
+类型检查 (type)
+String
+Number
+Boolean
+Array
+Object
+Date
+Function
+Symbol
+
+```
 
 
 
