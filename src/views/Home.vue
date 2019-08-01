@@ -1,6 +1,13 @@
 <template>
-  <div class="document-container">
-    <document v-for="(doc, index) in documents" :key="index" v-on:clickCard="clickDocument" :title="doc.title" :content="doc.content" :date="doc.date"></document>
+  <div class="content-main">
+    <div class="left"></div>
+    <div class="right">
+      <Row>
+        <Col span="6" class="content-list">111111</Col>
+        <Col span="18" class="content-detail">111111</Col>
+      </Row>
+      
+    </div>
   </div>
 </template>
 
@@ -53,8 +60,26 @@ export default {
 </script>
 
 <style scoped>
-  .document-container{
-    margin-top: 20px;
+  .content-main{
+    display: flex;
   }
+  .left{
+    width: 50px;
+    height: 100px;
+    background: red;
+  }
+  .right{
+    width: 100%;
+    height: 100px;
+    background: blue;
+  }
+  .content-list{
+    height: 100%;
+    background:yellow;
+    }
+    .content-detail{
+      height: 100%;
+      background: green;
+    }
 </style>
 
