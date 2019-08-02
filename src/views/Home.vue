@@ -1,12 +1,11 @@
 <template>
   <div class="content-main">
-    <div class="left"></div>
+    <div v-show="showLeft" class="left"></div>
     <div class="right">
       <Row>
-        <Col span="6" class="content-list">111111</Col>
-        <Col span="18" class="content-detail">111111</Col>
+        <Col v-show="showList" :span="listW" class="content-list">111111</Col>
+        <Col v-show="showDetail" :span="detailW" class="content-detail">111111</Col>
       </Row>
-      
     </div>
   </div>
 </template>
@@ -17,69 +16,77 @@ import document from "@/components/document.vue";
 
 export default {
   name: "home",
-  data(){
+  components: {
+    document
+  },
+
+  data() {
     return {
-      documents:[
-      {
-        title:"title 1",
-        content:"content 1",
-        date:"1990-01-01",
-      },
-      {
-        title:"title 2",
-        content:"content 2",
-        date:"1990-01-02",
-      },
-      {
-        title:"title 3",
-        content:"content 3",
-        date:"1990-01-03",
-      },
-      {
-        title:"title 4",
-        content:"content 4",
-        date:"1990-01-04",
-      },
-      {
-        title:"title 5",
-        content:"content 5",
-        date:"1990-01-05",
-      },
-      ],
+      showLeft: true,
+      listW:6,
+      showList:true,
+      detailW:18,
+      showDetail:true,
+    };
+  },
+
+  created() {
+    this.notificationWidth()
+  },
+
+  computed: {
+    bodyW: function() {
+      console.log(1234);
+      return document.body.offsetWidth;
     }
   },
-  components: {
-    document,
-  },
-  methods :{
-    clickDocument(msg){
+  methods: {
+    clickDocument(msg) {
       console.log("click document title:" + msg);
+    },
+
+    notificationWidth() {
+      var t = this
+      window.onresize = function() {
+        var width = window.document.getElementsByClassName("content-main")[0].offsetWidth
+        if (width < 500){
+          t.showLeft = false
+          t.listW = 0
+          t.showList = false
+          t.detailW = 24
+        }else {
+          t.showLeft = true
+          t.listW = 6
+          t.showList = true
+          t.detailW = 18
+        }
+      };
     }
   }
 };
 </script>
 
 <style scoped>
-  .content-main{
-    display: flex;
-  }
-  .left{
-    width: 50px;
-    height: 100px;
-    background: red;
-  }
-  .right{
-    width: 100%;
-    height: 100px;
-    background: blue;
-  }
-  .content-list{
-    height: 100%;
-    background:yellow;
-    }
-    .content-detail{
-      height: 100%;
-      background: green;
-    }
+.content-main {
+  display: flex;
+}
+.left {
+  width: 50px;
+  height: 100px;
+  background: red;
+}
+.right {
+  width: 100%;
+  height: 100px;
+  background: blue;
+}
+.content-list {
+  height: 100%;
+  background: yellow;
+}
+.content-detail {
+  height: 100%;
+  background: green;
+}
 </style>
 
