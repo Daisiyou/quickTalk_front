@@ -4,7 +4,9 @@
     <div class="right">
       <Row>
         <Col v-show="showList" :span="listW" class="content-list">111111</Col>
-        <Col v-show="showDetail" :span="detailW" class="content-detail">111111</Col>
+        <Col v-show="showDetail" :span="detailW" class="content-detail"
+          >111111</Col
+        >
       </Row>
     </div>
   </div>
@@ -23,15 +25,15 @@ export default {
   data() {
     return {
       showLeft: true,
-      listW:6,
-      showList:true,
-      detailW:18,
-      showDetail:true,
+      listW: 6,
+      showList: true,
+      detailW: 18,
+      showDetail: true
     };
   },
 
   created() {
-    this.notificationWidth()
+    this.notificationWidth();
   },
 
   computed: {
@@ -46,19 +48,20 @@ export default {
     },
 
     notificationWidth() {
-      var t = this
+      var t = this;
       window.onresize = function() {
-        var width = window.document.getElementsByClassName("content-main")[0].offsetWidth
-        if (width < 500){
-          t.showLeft = false
-          t.listW = 0
-          t.showList = false
-          t.detailW = 24
-        }else {
-          t.showLeft = true
-          t.listW = 6
-          t.showList = true
-          t.detailW = 18
+        var width = window.document.getElementsByClassName("content-main")[0]
+          .offsetWidth;
+        if (width < 500) {
+          t.showLeft = false;
+          t.listW = 0;
+          t.showList = false;
+          t.detailW = 24;
+        } else {
+          t.showLeft = true;
+          t.listW = 6;
+          t.showList = true;
+          t.detailW = 18;
         }
       };
     }
@@ -90,4 +93,3 @@ export default {
   background: green;
 }
 </style>
-

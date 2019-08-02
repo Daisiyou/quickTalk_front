@@ -1,21 +1,20 @@
 <template>
   <div id="app">
     <!-- <div id="nav"> -->
-      <!-- <navbar></navbar> -->
+    <!-- <navbar></navbar> -->
     <!-- </div> -->
     <router-view></router-view>
   </div>
 </template>
 <script>
-
 export default {
-  name: "App",
+  name: "App"
 };
 </script>
 
 <style>
-
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -27,5 +26,4 @@ html, body {
   text-align: center;
   color: #2c3e50;
 }
-
 </style>

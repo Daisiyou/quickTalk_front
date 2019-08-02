@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <Button type="primary">button</Button>
-   <Button type="primary">Primary</Button>
+    <Button type="primary">Primary</Button>
 
     <Card>
       <p slot="title">1234</p>
@@ -12,8 +12,5 @@
 </template>
 
 <script>
-
-export default {
-  
-}
+export default {};
 </script>

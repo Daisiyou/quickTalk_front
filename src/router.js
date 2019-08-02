@@ -4,22 +4,19 @@ import Router from "vue-router";
 
 Vue.use(Router);
 
-
-const router= new Router({
+const router = new Router({
   routes: [
     {
       path: "/home",
       name: "home",
       // component: Home
-      component: () => 
-      import("./views/Home.vue")
+      component: () => import("./views/Home.vue")
     },
     {
       path: "/",
       name: "Login",
       // component: Home
-      component: () => 
-      import("./views/Login.vue")
+      component: () => import("./views/Login.vue")
     },
     {
       path: "/about",
@@ -34,9 +31,9 @@ const router= new Router({
 });
 
 router.beforeEach((to, from, next) => {
-  console.log(to)
-  console.log(from)
-  next()
-})
+  console.log(to);
+  console.log(from);
+  next();
+});
 
-export default router
+export default router;

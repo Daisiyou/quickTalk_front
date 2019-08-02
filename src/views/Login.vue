@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: "login",
   data() {
@@ -56,19 +57,28 @@ export default {
       }
     };
   },
-  created() {
-  },
+  created() {},
   methods: {
-    handleSubmit(name) {
-        
-      this.$router.replace("home");
-    //   this.$refs[name].validate(valid => {
-    //     if (valid) {
-    //       this.$Message.success("Success!");
-    //     } else {
-    //       this.$Message.error("Fail!");
-    //     }
-    //   });
+    handleSubmit() {
+      
+      
+      axios
+        .get("/index")
+        .then(function(response) {
+          console.log(response);
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+      // this.$router.replace("home");
+
+      //   this.$refs[name].validate(valid => {
+      //     if (valid) {
+      //       this.$Message.success("Success!");
+      //     } else {
+      //       this.$Message.error("Fail!");
+      //     }
+      //   });
     }
   }
 };
@@ -87,4 +97,3 @@ export default {
   }
 }
 </style>
-
