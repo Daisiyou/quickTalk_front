@@ -69,15 +69,16 @@ export default {
 <style scoped>
 .content-main {
   display: flex;
+  height: 100%;
 }
 .left {
   width: 50px;
-  height: 100px;
+  height: 100%;
   background: red;
 }
 .right {
   width: 100%;
-  height: 100px;
+  height: 100%;
   background: blue;
 }
 .content-list {
