@@ -48,7 +48,7 @@ Symbol
 
 
 
-# vue-travel-app
+# quickTalk_front
 
 ## Project setup
 ```
